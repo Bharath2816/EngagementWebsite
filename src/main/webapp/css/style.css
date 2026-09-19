@@ -1,0 +1,969 @@
+
+/* ========================================
+   BASIC RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fffaf7;
+    color: #3d3030;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            rgba(255, 245, 245, 0.85),
+            rgba(255, 235, 235, 0.95)
+        );
+
+    position: relative;
+}
+
+
+/* Small heading */
+
+.small-text {
+    font-size: 14px;
+    letter-spacing: 5px;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+
+    color: #9b6666;
+}
+
+
+/* Couple Photo */
+
+.couple-photo {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+
+    margin-bottom: 25px;
+}
+
+
+/* Couple Names */
+
+.hero h1 {
+    font-size: 48px;
+
+    font-weight: normal;
+
+    color: #5b3b3b;
+
+    margin-bottom: 15px;
+}
+
+
+/* Date */
+
+.date {
+    font-size: 24px;
+
+    color: #9b6666;
+
+    margin-bottom: 15px;
+}
+
+
+/* Message */
+
+.message {
+    font-size: 18px;
+
+    font-style: italic;
+
+    color: #725656;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   COUNTDOWN
+======================================== */
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.countdown div {
+    width: 90px;
+
+    padding: 15px 10px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.countdown span {
+    display: block;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #7f4f4f;
+}
+
+
+.countdown p {
+    font-size: 13px;
+
+    color: #8f7070;
+
+    margin-top: 3px;
+}
+
+
+/* ========================================
+   COMMON SECTION
+======================================== */
+
+.story,
+.event,
+.gallery,
+.rsvp {
+    padding: 90px 8%;
+
+    text-align: center;
+}
+
+
+.section-title {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+    color: #a36b6b;
+
+    margin-bottom: 10px;
+}
+
+
+.story h2,
+.event h2,
+.gallery h2,
+.rsvp h2 {
+    font-size: 38px;
+
+    font-weight: normal;
+
+    color: #503838;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   OUR STORY
+======================================== */
+
+.story {
+    background: #fffaf7;
+}
+
+
+.story-text {
+    max-width: 750px;
+
+    margin: 0 auto 15px;
+
+    font-size: 17px;
+
+    color: #6d5a5a;
+}
+
+
+/* ========================================
+   EVENT SECTION
+======================================== */
+
+.event {
+    background: #fff0f2;
+}
+
+
+.event-container {
+    max-width: 1000px;
+
+    margin: 40px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.event-box {
+    width: 260px;
+
+    padding: 30px 20px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+
+.event-box:hover {
+    transform: translateY(-8px);
+}
+
+
+.event-box h3 {
+    font-size: 20px;
+
+    color: #7f4f4f;
+
+    margin-bottom: 10px;
+}
+
+
+.event-box p {
+    color: #6d5a5a;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   BEAUTIFUL GALLERY
+======================================== */
+
+.gallery {
+    background: #fffaf7;
+}
+
+
+.gallery-container {
+    max-width: 1100px;
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Gallery images */
+
+.gallery-container img {
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* Image hover */
+
+.gallery-container img:hover {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Make first image slightly larger */
+
+.gallery-container img:first-child {
+    grid-row: span 2;
+
+    height: 720px;
+}
+
+
+/* ========================================
+   RSVP SECTION
+======================================== */
+
+.rsvp {
+    background: #fff0f2;
+}
+
+
+.rsvp p:not(.section-title) {
+    color: #6d5a5a;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+}
+
+
+/* RSVP Button */
+
+.rsvp-button {
+
+
+display: inline-block;
+
+padding: 14px 35px;
+
+border: none;
+
+border-radius: 30px;
+
+background: #8f5b5b;
+
+color: white;
+
+font-size: 16px;
+
+font-family: inherit;
+
+font-weight: 500;
+
+text-decoration: none;
+
+cursor: pointer;
+
+letter-spacing: 1px;
+
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+
+transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+
+
+}
+
+.rsvp-button:hover {
+
+
+background: #6f4242;
+
+transform: translateY(-4px);
+
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+
+
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    background: #4d3737;
+
+    color: white;
+}
+
+
+footer h3 {
+    font-size: 24px;
+
+    font-weight: normal;
+
+    margin-bottom: 10px;
+}
+
+
+footer p {
+    font-size: 14px;
+
+    color: #eadcdc;
+
+    margin: 5px 0;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .gallery-container img:first-child {
+        grid-row: auto;
+
+        height: 350px;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 50px 15px;
+    }
+
+
+    .small-text {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .couple-photo {
+        width: 170px;
+
+        height: 170px;
+    }
+
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+
+    .date {
+        font-size: 20px;
+    }
+
+
+    .message {
+        font-size: 16px;
+    }
+
+
+    .countdown {
+        gap: 8px;
+    }
+
+
+    .countdown div {
+        width: 70px;
+
+        padding: 10px 5px;
+    }
+
+
+    .countdown span {
+        font-size: 23px;
+    }
+
+
+    .story,
+    .event,
+    .gallery,
+    .rsvp {
+        padding: 65px 20px;
+    }
+
+
+    .story h2,
+    .event h2,
+    .gallery h2,
+    .rsvp h2 {
+        font-size: 30px;
+    }
+
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .gallery-container img,
+    .gallery-container img:first-child {
+        height: 400px;
+    }
+
+
+    .event-box {
+        width: 100%;
+    }
+
+}
+
+
+/* ================= WELCOME SCREEN ================= */
+
+#welcomeScreen {
+
+position: fixed;
+
+top: 0;
+left: 0;
+
+width: 100%;
+height: 100vh;
+
+background: #fff0f2;
+
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+text-align: center;
+
+z-index: 99999;
+
+transition: opacity 1s ease,
+            visibility 1s ease;
+
+
+}
+
+#welcomeScreen.hide {
+
+
+opacity: 0;
+
+visibility: hidden;
+
+
+}
+
+.welcome-content {
+
+
+padding: 30px;
+
+animation: welcomeAppear 1.5s ease;
+
+
+}
+
+.welcome-small {
+
+
+letter-spacing: 4px;
+
+font-size: 14px;
+
+color: #8f5b5b;
+
+margin-bottom: 15px;
+
+
+}
+
+.welcome-content h1 {
+
+
+font-size: 55px;
+
+margin: 10px 0;
+
+
+}
+
+.welcome-content h2 {
+
+
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: 38px;
+
+font-weight: normal;
+
+color: #7f4f4f;
+
+margin: 10px 0;
+
+
+}
+
+.welcome-date {
+
+
+color: #6d5a5a;
+
+font-size: 17px;
+
+margin-bottom: 35px;
+
+
+}
+
+#enterButton {
+
+
+border: none;
+
+padding: 15px 35px;
+
+border-radius: 30px;
+
+background: #8f5b5b;
+
+color: white;
+
+font-size: 15px;
+
+letter-spacing: 2px;
+
+cursor: pointer;
+
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+transition: transform 0.3s ease,
+            background 0.3s ease;
+
+
+}
+
+#enterButton:hover {
+
+
+transform: scale(1.08);
+
+background: #7f4f4f;
+
+
+}
+
+@keyframes welcomeAppear {
+
+
+from {
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+}
+
+to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+
+.welcome-content h2 {
+
+    font-size: 28px;
+
+}
+
+.welcome-content h1 {
+
+    font-size: 45px;
+
+}
+
+#enterButton {
+
+    padding: 13px 28px;
+
+}
+
+
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+.hearts-container {
+
+
+position: fixed;
+
+left: 0;
+top: 0;
+
+width: 100%;
+height: 100vh;
+
+pointer-events: none;
+
+overflow: hidden;
+
+z-index: 10;
+
+
+}
+
+.hearts-container span {
+
+
+position: absolute;
+
+bottom: -50px;
+
+font-size: 22px;
+
+opacity: 0;
+
+animation: floatHeart 8s linear infinite;
+
+
+}
+
+/* Different positions */
+
+.hearts-container span:nth-child(1) {
+left: 10%;
+animation-delay: 0s;
+}
+
+.hearts-container span:nth-child(2) {
+left: 22%;
+animation-delay: 2s;
+}
+
+.hearts-container span:nth-child(3) {
+left: 35%;
+animation-delay: 4s;
+}
+
+.hearts-container span:nth-child(4) {
+left: 48%;
+animation-delay: 1s;
+}
+
+.hearts-container span:nth-child(5) {
+left: 60%;
+animation-delay: 3s;
+}
+
+.hearts-container span:nth-child(6) {
+left: 72%;
+animation-delay: 5s;
+}
+
+.hearts-container span:nth-child(7) {
+left: 84%;
+animation-delay: 2.5s;
+}
+
+.hearts-container span:nth-child(8) {
+left: 94%;
+animation-delay: 4.5s;
+}
+
+@keyframes floatHeart {
+
+
+0% {
+
+    transform:
+        translateY(0)
+        scale(0.7)
+        rotate(0deg);
+
+    opacity: 0;
+
+}
+
+10% {
+
+    opacity: 0.8;
+
+}
+
+50% {
+
+    transform:
+        translateY(-50vh)
+        scale(1)
+        rotate(15deg);
+
+    opacity: 0.6;
+
+}
+
+100% {
+
+    transform:
+        translateY(-110vh)
+        scale(1.2)
+        rotate(-15deg);
+
+    opacity: 0;
+
+}
+
+
+}
+
+
+/* ================= SCROLL ANIMATION ================= */
+
+.scroll-animation {
+
+
+opacity: 0;
+
+transform: translateY(60px);
+
+transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+
+}
+
+/* When section becomes visible */
+
+.scroll-animation.show {
+
+opacity: 1;
+
+transform: translateY(0);
+
+
+}
+
+/* ================= SECTION TITLE ALIGNMENT ================= */
+
+.story-section h2,
+.event-section h2 {
+text-align: center;
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+/* ================= OUR STORY ALIGNMENT FIX ================= */
+
+.story-section {
+width: 100%;
+max-width: 900px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+.story-section h2 {
+text-align: center;
+width: 100%;
+}
+
+.story-section p {
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+/* ================= EVENT DETAILS ALIGNMENT FIX ================= */
+
+.event-section {
+width: 100%;
+text-align: center;
+}
+
+.event-section h2 {
+text-align: center;
+}
+
+.event-container {
+display: flex;
+justify-content: center;
+align-items: stretch;
+gap: 25px;
+}
+
+
+
+

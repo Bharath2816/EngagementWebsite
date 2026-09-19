@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RSVP | Our Engagement</title>
+
+<!-- RSVP CSS -->
+<link rel="stylesheet" href="css/rsvp.css">
+
+
+</head>
+
+<body>
+
+<!-- ================= RSVP PAGE ================= -->
+
+<section class="rsvp-page">
+
+    <div class="rsvp-card">
+
+        <!-- Small Title -->
+        <p class="small-title">
+            YOU ARE INVITED
+        </p>
+
+        <!-- Main Title -->
+        <h1>
+            RSVP
+        </h1>
+
+        <!-- Introduction -->
+        <p class="intro">
+            We would love to celebrate our special day
+            with you.
+        </p>
+
+
+        <!-- ================= RSVP FORM ================= -->
+
+        <form
+            id="rsvpForm"
+            action="submitRSVP"
+            method="post"
+        >
+
+            <!-- Guest Name -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Phone Number -->
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your 10-digit phone number"
+                    maxlength="10"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Number of Guests -->
+
+            <div class="form-group">
+
+                <label for="guests">
+                    Number of Guests
+                </label>
+
+                <select
+                    id="guests"
+                    name="guests"
+                    required
+                >
+
+                    <option value="1">
+                        1 Guest
+                    </option>
+
+                    <option value="2">
+                        2 Guests
+                    </option>
+
+                    <option value="3">
+                        3 Guests
+                    </option>
+
+                    <option value="4">
+                        4 Guests
+                    </option>
+
+                    <option value="5">
+                        5 Guests
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Attendance -->
+
+            <div class="form-group">
+
+                <label>
+                    Will you attend?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="yes"
+                            required
+                        >
+
+                        Yes, I'll be there ❤️
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="no"
+                        >
+
+                        Sorry, I can't attend
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- Wishes / Message -->
+
+            <div class="form-group">
+
+                <label for="message">
+                    Your Wishes
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Write your wishes for the couple..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- Submit Button -->
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Send RSVP ❤️
+            </button>
+
+        </form>
+
+
+        <!-- Back Button -->
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← Back to Invitation
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- JavaScript -->
+
+<script src="js/rsvp.js"></script>
+
+
+</body>
+
+</html>

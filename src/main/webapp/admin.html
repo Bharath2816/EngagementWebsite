@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RSVP Admin</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+        background: #fff5f6;
+        color: #4d3737;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #7f4f4f;
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-bottom: 35px;
+        color: #777;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 900px;
+    }
+
+    th,
+    td {
+        padding: 14px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+    th {
+        background: #8f5b5b;
+        color: white;
+    }
+
+    tr:hover {
+        background: #fff5f6;
+    }
+
+    .loading {
+        text-align: center;
+        padding: 30px;
+        color: #777;
+    }
+
+    .error {
+        text-align: center;
+        padding: 30px;
+        color: red;
+    }
+
+    .back {
+        display: block;
+        width: fit-content;
+        margin: 25px auto 0;
+        padding: 12px 25px;
+        background: #8f5b5b;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+    <h1>RSVP Responses ❤️</h1>
+
+    <p class="subtitle">
+        Engagement Guest List
+    </p>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Phone</th>
+
+                    <th>Guests</th>
+
+                    <th>Attendance</th>
+
+                    <th>Message</th>
+
+                    <th>Date</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="rsvpTableBody">
+
+                <tr>
+
+                    <td colspan="7" class="loading">
+                        Loading RSVP data...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <a href="index.html" class="back">
+        ← Back to Website
+    </a>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const tableBody =
+            document.getElementById("rsvpTableBody");
+
+        /*
+         * admin.html
+         *       ↓
+         * adminRSVP
+         *       ↓
+         * RSVPAdminServlet
+         *       ↓
+         * MySQL
+         */
+
+        fetch("adminRSVP")
+
+            .then(function (response) {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Server Error: " + response.status
+                    );
+
+                }
+
+                return response.text();
+
+            })
+
+            .then(function (data) {
+
+                console.log("Data received:", data);
+
+                if (data.trim() === "") {
+
+                    tableBody.innerHTML =
+                        "<tr>" +
+                        "<td colspan='7' class='loading'>" +
+                        "No RSVP responses found." +
+                        "</td>" +
+                        "</tr>";
+
+                } else {
+
+                    tableBody.innerHTML = data;
+
+                }
+
+            })
+
+            .catch(function (error) {
+
+                console.error("Error:", error);
+
+                tableBody.innerHTML =
+                    "<tr>" +
+                    "<td colspan='7' class='error'>" +
+                    "Unable to load RSVP data." +
+                    "</td>" +
+                    "</tr>";
+
+            });
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

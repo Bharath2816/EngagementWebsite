@@ -1,0 +1,17 @@
+# Eclipse
+.settings/
+.classpath
+.project
+
+# Build files
+build/
+target/
+
+# Java compiled files
+*.class
+
+# IDE files
+.metadata/
+
+# Secrets
+.env
