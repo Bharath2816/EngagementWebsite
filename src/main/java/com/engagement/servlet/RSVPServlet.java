@@ -49,9 +49,15 @@ public class RSVPServlet extends HttpServlet {
                 response.sendRedirect("success.html");
             }
 
+          
         } catch (Exception e) {
 
             e.printStackTrace();
+
+            System.out.println("===== RSVP ERROR =====");
+            System.out.println("Error Message: " + e.getMessage());
+            e.printStackTrace();
+            System.out.println("======================");
 
             response.setContentType("text/html");
 
@@ -59,6 +65,8 @@ public class RSVPServlet extends HttpServlet {
                 "<h2>Something went wrong!</h2>"
             );
         }
+        
+
     }
 }
 
