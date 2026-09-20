@@ -6,41 +6,27 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    private static final String URL =
-            "jdbc:mysql://localhost:3306/engagement_db";
+    public static Connection getConnection() throws SQLException {
 
-    private static final String USER = "root";
+        String host = System.getenv("DB_HOST");
+        String port = System.getenv("DB_PORT");
+        String database = System.getenv("DB_NAME");
+        String user = System.getenv("DB_USER");
+        String password = System.getenv("DB_PASSWORD");
 
-    private static final String PASSWORD = "";
-
-    public static Connection getConnection() {
-
-        Connection connection = null;
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + database
+                   + "?useSSL=true&serverTimezone=UTC";
 
         try {
-
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-            connection = DriverManager.getConnection(
-                    URL,
-                    USER,
-                    PASSWORD
-            );
-
-            System.out.println("Database connected successfully!");
-
         } catch (ClassNotFoundException e) {
-
-            System.out.println("MySQL Driver not found!");
-            e.printStackTrace();
-
-        } catch (SQLException e) {
-
-            System.out.println("Database connection failed!");
-            e.printStackTrace();
+            throw new SQLException("MySQL Driver not found!", e);
         }
 
-        return connection;
+        return DriverManager.getConnection(
+                url,
+                user,
+                password
+        );
     }
 }
-
